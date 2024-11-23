@@ -4,12 +4,7 @@ import axios from "axios";
 const API_URL = "http://localhost:3000";
 
 export const fetchProducts = createAsyncThunk("products/fetchProducts", async () => {
-  const response = await axios.get(`${API_URL}/products`, {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-    },
-  });
+  const response = await axios.get(`${API_URL}/products`);
   return response.data;
 });
 
